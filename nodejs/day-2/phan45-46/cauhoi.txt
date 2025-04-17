@@ -1,0 +1,13 @@
+1. Phân biệt development và production.
+development là môi trường phát triển phần mềm dành cho dev
+production là khi đã đẩy code lên main là mỗi trường thực tế dành cho khách hàng
+
+2. Dùng try/catch với async/await?
+try/catch là cách để  xử lý ngoại lệ trong try là xử lý các logic nếu try gây ra lỗi thì chạy và catch trong catch thường
+là trả ra lỗi
+
+async/await là một cách xử lý bất đồng bộ async sẽ đánh dấu một hàm trở hành hàm bất đồng bộ còn await sẽ chờ cho việc 
+thực thi câu lệnh sau await xong thì mới thực thi các phần bên dướidưới
+
+3. Bắt uncaughtException để làm gì?
+Để bắt những lỗi không được bắt tức là những lỗi xảy ra mà không có try/catch bao quanh

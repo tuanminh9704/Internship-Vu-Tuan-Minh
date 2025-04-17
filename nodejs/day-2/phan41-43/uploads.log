@@ -1,0 +1,51 @@
+Nodejs: nestjs (lifecycle)
+deep copy vs shallow copy
+
+Mongo, Mysql
+Caching:
+Redis
+
+* sql vs nosql
+* graphql vs restful 
+
+aws:
+Common
+IAM
+S3
+rds
+dynamodb
+lambda
+step functions
+API gateway (Optional)
+secret manager
+EC2
+Cognito
+Cloudformation
+Cloudwatch
+VPC
+SES
+
+Event:
+Sqs
+Sns
+
+CI/CD:
+Docker
+ecs / ecr
+code build / codepipeline
+amplify
+Route53
+Cloudfront
+
+-----------
+
+Data:
+Kinesis
+Glue
+Athena
+
+SQL handling:
+AWS WAF
+
+
+

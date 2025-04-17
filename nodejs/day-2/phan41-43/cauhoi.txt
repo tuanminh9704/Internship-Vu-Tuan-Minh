@@ -1,0 +1,9 @@
+emitter.on() vs once()?
+emitter.on() tạo một listenẻ cho event khi emit bao nhiêu lần thì sẽ gọi lại bấy nhiêu lần còn .once()
+thì chỉ gọi 1 lần duy nhất
+
+Tạo server đơn giản bằng http.createServer()?
+
+Cách dùng http.request()?
+http request là giao thức giữa client và server, client gửi yêu cầu đến server và server phản hồi lại
+có các phương thức là get, post, put, delete

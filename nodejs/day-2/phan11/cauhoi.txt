@@ -1,0 +1,12 @@
+Câu hỏi:
+1. REPL là gì?
+REPL là nơi biểu diễn môi trường máy tính như màn hình console cho phép thực thi mã js nodenode
+
+
+2. Biến _ trong REPL để làm gì?
+Nó lưu giá trị của biểu thức cuối cùng được đánh giá mà không cần lưu vào biến nào
+
+3. Các lệnh đặc biệt như .help, .exit dùng khi nào?
+ .help để hiển thị các lệnh đặc biệt trong REPL
+. exit để thoát khỏi REPL
+
