@@ -1,0 +1,11 @@
+Câu hỏi:
+dependencies vs devDependencies?
+dependencies: là các packages mà ứng dụng  yêu cầu;
+devDependencies: là các package mà dành cho dev trong quá trình phát triển
+
+Khi nào dùng npx?
+Nếu chỉ muốn chạy một file duy nhất mà không phải chạy cả hệ thống ví dụ: muốn chạy 1 file script để thay đổi
+master data trong hệ thống
+
+Tác dụng của package-lock.json?
+Sẽ ghi lại đúng phiên bản đã cài bao gồm các dependency phụ mà package.json không liệt kê

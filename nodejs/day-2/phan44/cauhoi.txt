@@ -1,0 +1,19 @@
+Câu hỏi:
+* Ưu điểm của stream?
+Tiết kiệm bộ nhớ
+- stream sử lý dưc liệu theo từng phần nhỏ(chunk) không cần load dữ liệu vào bộ nhớ
+Tốc độ xử lý nhanh
+- Dữ liệu xử lý ngay khi có 
+
+* pipe() làm gì?
+pipe() dùng để chuyển dữ liệu từ một stream đầu ra (readable) sang một 
+stream đầu vào (writable). Nó giúp nối các stream lại với nhau theo cách đơn giản và hiệu quả
+
+* Có bao nhiêu loại stream?
+Readable stream – Đọc dữ liệu (ví dụ: fs.createReadStream())
+
+Writable stream – Ghi dữ liệu (ví dụ: fs.createWriteStream())
+
+Duplex stream – Vừa đọc vừa ghi
+
+Transform stream – Là một dạng duplex nhưng có khả năng biến đổi dữ liệu khi truyền qua (ví dụ: zlib.createGzip())

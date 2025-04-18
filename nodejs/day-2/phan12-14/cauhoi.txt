@@ -1,0 +1,10 @@
+Làm sao nhận input từ process.argv?
+process.argv là một mảng (array) chứa các đối số dòng lệnh (command-line arguments) được truyền vào khi chạy chương trình Node.js.
+nên có thể lấy tham số bằng cách process.arvg[1], process.arvg[1], process.arvg[...];
+
+Khác biệt giữa stdout và stderr?
+stdout: in ra kết quả thông thường 
+stderr: in ra cảnh báo hoặc lỗi
+
+Cách dùng readline?
+nhận input từ người dùng qua dòng lệnh thông qua terminal 

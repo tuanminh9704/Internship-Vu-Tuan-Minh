@@ -1,0 +1,15 @@
+1. GET vs POST khác nhau ở điểm nào?
+GET là phương thức thường được sử dụng để lấy dữ liệu
+POST là phương thức thường được sử dụng để thêm dữ liệuliệu
+
+
+2. Cách lấy body trong POST request?
+sử dụng req.body và thư viện body-parser
+
+
+3. Dùng http.ServerResponse ra sao?
+Trong Node.js, khi tạo một HTTP server bằng http.createServer, hàm callback sẽ nhận 2 đối số: request, response
+req (request)	Là yêu cầu từ client gửi đến server, chứa thông tin như URL, method, header, body,...
+res (response)	Là phản hồi từ server, dùng để gửi kết quả từ server về cho client
+
+

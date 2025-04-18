@@ -1,0 +1,10 @@
+Câu hỏi:
+process.nextTick() vs setTimeout()?
+nextTick sẽ chạy ngay sau khi  call stack trông với độ ưu tiên cao hơn là setTimeOut
+
+Stack và queue khác gì nhau?
+Stack là kiểu ngăn xếp vào sau ra trước(last in first out)
+queue là kiểu hàng đợi vào trước ra trước(first in  first out)
+
+Dùng setImmediate() khi nào?
+Khi muốn thực hiện xử lý ngay sau I/O

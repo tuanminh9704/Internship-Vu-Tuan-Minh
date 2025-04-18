@@ -1,0 +1,9 @@
+fs.readFileSync() và fs.readFile()?
+readFile sẽ đọc file theo non-blocking không chặn các tác vụ khác
+readFileSync sẽ chặn các tác  vụ khác cho đến khi nó hoàn thành
+
+path.join() để làm gì?
+hoàn thành đường dẫn tệp bằng cách nối thư mục với tên tệp
+
+Dùng os.totalmem() để làm gì?
+trả về dung lượng bộ nhớ hệ thống theo byte dưới dạng số nguyên
