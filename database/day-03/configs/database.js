@@ -1,7 +1,7 @@
 
-import mysql from 'mysql2';
+import mysql from 'mysql2/promise';
  
-const conn = mysql.createConnection({
+const conn = mysql.createPool({
      host: "localhost",
      user: 'root',
      password: '@M972004abc',
