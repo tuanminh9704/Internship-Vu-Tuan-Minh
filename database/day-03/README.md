@@ -12,11 +12,19 @@
  ![alt text](images/image-1.png)
  - Chạy câu lệnh node index.js để chạy dự án 
 
- # Test trên post man:
+ -Bật terminal chạy file firstSeed
+
+ # Kiểm thử các API trên Post Man trên post man:
  GET: ![alt text](images/image-2.png)
  POST: ![alt text](images/image-3.png)
  PUT: ![alt text](images/image-4.png)
  DELETE: ![alt text](images/image-5.png)
+
+ Sai token: 
+ ![alt text](images/image-6.png)
+
+ Log ra file: 
+ ![alt text](images/image-1.png)
 
 
 
