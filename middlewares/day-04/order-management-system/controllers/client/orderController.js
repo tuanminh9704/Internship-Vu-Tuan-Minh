@@ -3,7 +3,7 @@ import conn from "../../configs/db.js";
 export const getOrderByUserId = async (req, res) => {
     try {
         const userId = req.user.id;
-        const [orders] = await conn.query('SELECT * FROM order WHERE user id = ?', [userId]);
+        const [orders] = await conn.query('SELECT * FROM orders WHERE user_id = ?', [userId]);
         res.status(200).json({
             success: true,
             statusCode: 200,
