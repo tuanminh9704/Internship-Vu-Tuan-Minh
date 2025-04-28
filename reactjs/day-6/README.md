@@ -38,11 +38,11 @@ Ví dụ:
 
 ## Demo
 - Chưa có công việc: 
-![alt text](./screen-shots/image.png)
+![alt text](./screen-shots/image-9.png)
 - Thêm công việc: 
-![alt text](./screen-shots/image-1.png)
+![alt text](./screen-shots/image-6.png)
 - khi ấn sửa công việc: 
-![alt text](./screen-shots/image-2.png)
+![alt text](./screen-shots/image-8.png)
 - Sau khi ấn cập nhật
-![alt text](./screen-shots/image-3.png)
+![alt text](./screen-shots/image-7.png)
 
