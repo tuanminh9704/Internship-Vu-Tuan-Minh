@@ -36,3 +36,13 @@ Ví dụ:
 # Tóm Tắt
 ![alt text](./screen-shots/image-5.png)
 
+## Demo
+- Chưa có công việc: 
+![alt text](./screen-shots/image.png)
+- Thêm công việc: 
+![alt text](./screen-shots/image-1.png)
+- khi ấn sửa công việc: 
+![alt text](./screen-shots/image-2.png)
+- Sau khi ấn cập nhật
+![alt text](./screen-shots/image-3.png)
+
