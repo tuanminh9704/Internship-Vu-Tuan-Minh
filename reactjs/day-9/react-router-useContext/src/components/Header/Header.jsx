@@ -1,4 +1,5 @@
 import './Header.scss'
+import {Link} from 'react-router-dom';
 
 export const Header = () => {
     return (
@@ -7,11 +8,11 @@ export const Header = () => {
                 <h2 className="Logo">TuanMinhShop.Com</h2>
             </div>
             <div className="navbar-header">
-                <a className="home-header" href="/">Home</a>
-                <a className="product-header" href="/products">Products</a>
-                <a className="cart-header" href="/carts">Cart</a>
-                <a className="login-header" href="/#">Login</a>
-                <a className="signup-header" href="/#">SignUp</a>
+                <Link className="home-header" to="/">Home</Link>
+                <Link className="product-header" to="/products">Products</Link>
+                <Link className="cart-header" to="/carts">Cart</Link>
+                <Link className="login-header" to="/">Login</Link>
+                <Link className="signup-header" to="/">SignUp</Link>
             </div>
         </div>
     );
