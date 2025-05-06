@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    .logo_header {
+        color: #ffff;
+        font-size: 20px;
+    }
+    .navbar_header {
+        display: flex;
+        gap: 20px;
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 16px;
+      
+            &:hover {
+              color: #1890ff;
+            }
+        }
+    }
+}

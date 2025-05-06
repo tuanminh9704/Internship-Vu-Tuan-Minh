@@ -1,12 +1,11 @@
-import { router } from "../../routes";
-import { useRoutes } from "react-router-dom"
+import {useRoutes} from 'react-router';
+import { router } from '../../routes';
 
 export const AllRouter = () => {
     const element = useRoutes(router);
-    return(
+    return (
         <>
             {element}
         </>
     )
-
 }

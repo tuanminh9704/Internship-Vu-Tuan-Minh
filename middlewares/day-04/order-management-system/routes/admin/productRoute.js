@@ -5,10 +5,10 @@ import { verifyTokenMiddleware, verifyUserAdmin } from '../../middlewares/authMi
 
 const router = express();
 
-router.post('/', validateProduct, addNewProduct)
+router.post('/', addNewProduct)
 
-router.put('/:id', validateProduct, updateProduct);
+router.put('/:id', updateProduct);
 
-router.delete('/:id', validateProduct, deleteProduct);
+router.delete('/:id', deleteProduct);
 
 export default router;

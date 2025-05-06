@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import CartContext from "../../context/CartContext.jsx";
 import './ProductList.scss';
 
+
 export const ProductList = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
