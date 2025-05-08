@@ -13,8 +13,11 @@
 
 ---
 
-## Cấu trúc thư mục
-day-11\ mini-project-product-cart
+## 📁 Cấu trúc thư mục
+
+```plaintext
+
+day-11/mini-project-product-cart
 │
 ├── node_modules
 ├── public
@@ -23,13 +26,18 @@ day-11\ mini-project-product-cart
     ├── assets
     ├── components
     │   ├── AllRouter.jsx
-    │   ├── CartItems.jsx
-    │   ├── CartItems.scss
-    │   ├── Header.jsx
-    │   ├── Header.scss
-    │   ├── MainLayout.jsx
-    │   ├── MainLayout.scss
-    │   └── ProductList.jsx
+    │   ├── CartItems
+    │   │   ├── CartItems.jsx
+    │   │   └── CartItems.scss
+    │   ├── Header
+    │   │   ├── Header.jsx
+    │   │   └── Header.scss
+    │   ├── MainLayout
+    │   │   ├── MainLayout.jsx
+    │   │   └── MainLayout.scss
+    │   └── ProductList
+    │       ├── ProductList.jsx
+    │       └── ProductList.scss
     │
     ├── contexts
     │   └── CartContext.jsx
@@ -38,13 +46,15 @@ day-11\ mini-project-product-cart
     │   └── FetchApiCustom.jsx
     │
     ├── pages
-    │   └── Home.jsx
+    │   └── Home
+    │       └── Home.jsx
     │
     ├── reducers
     │   └── CartReducer.jsx
     │
-    └── routes
-        └── index.jsx
+    ├── routes
+    │   └── index.jsx
+    │
     ├── App.css
     ├── App.jsx
     ├── main.jsx
@@ -55,7 +65,7 @@ day-11\ mini-project-product-cart
     ├── package.json
     └── README.md
 
----
+```
 
 ## 🛠️ Công nghệ sử dụng
 
@@ -63,7 +73,8 @@ day-11\ mini-project-product-cart
 - **Backend**: NodeJS, Express (tự xây dựng từ tuần trước)
 - **Lưu trữ tạm thời**: localStorage (trạng thái Cart)
 
----
+```
+
 
 ## 🔧 Cài đặt
 
