@@ -12,13 +12,13 @@ export const CartItems = () => {
     return (
         <div className="cart-items">
             <h2>🛒 Giỏ hàng</h2>
-            <h2 className='total-price'>Tổng giá: {totalPrice.toLocaleString()}₫</h2>
+            <h2 className='total-price'>Tổng giá: {totalPrice.toLocaleString()}$</h2>
             {cart.length === 0 ? (
                 <p>Không có sản phẩm nào trong giỏ hàng.</p>
             ) : (
                 cart.items.flat().map((item) => (
                     <div className="cart-item" key={item.id}>
-                        <img src={item.image} alt={item.name} />
+                        <img src='https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg' alt={item.name} />
                         <div className="info">
                             <h4>{item.name}</h4>
                             <p>{item.price.toLocaleString()}₫</p>

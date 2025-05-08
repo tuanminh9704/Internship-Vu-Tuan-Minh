@@ -14,7 +14,7 @@ export const ProductList = () => {
   const [editingProduct, setEditingProduct] = useState([]);
   const [editModal, setEditModal] = useState(false);
   const [searchItem, setSearchItems] = useState("");
-    console.log(searchItem);
+  console.log(searchItem);
 
   const [form] = Form.useForm();
   const [editForm] = Form.useForm();
@@ -69,8 +69,11 @@ export const ProductList = () => {
 
   const onEdit = (product) => {
     setEditingProduct(product);
-    editForm.setFieldsValue(product);
-    setEditModal(true);
+    editForm.setFieldsValue({
+      ...product,
+      price: Number(product.price),
+      stock: Number(product.stock),
+    });    setEditModal(true);
   };
 
   const onFinishEdit = (dataForm) => {
@@ -288,7 +291,7 @@ export const ProductList = () => {
               <a className="title" href={`/products/${product.id}`}>
                 {product.name}
               </a>
-              <p className="price">${product.price}</p>
+              <p className="price">{Number(product.price)}đ</p>
               <div className="action-buttons">
                 <Button type="primary" onClick={() => addToCart(product)}>
                   Thêm
