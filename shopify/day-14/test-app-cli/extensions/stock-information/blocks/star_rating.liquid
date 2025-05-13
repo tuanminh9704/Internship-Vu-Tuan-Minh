@@ -1,0 +1,18 @@
+<div id="inventory-checker" data-product-id="{{ product.id }}"></div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.location.pathname.startsWith('/products/')) {
+      const container = document.getElementById('inventory-checker');
+      // Hard-code số lượng tồn kho
+      const stock = 42;
+      container.innerHTML = `<p>Stock available: ${stock}</p>`;
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "Inventory Checker",
+  "target": "section",
+  "settings": []
+}
+{% endschema %}
