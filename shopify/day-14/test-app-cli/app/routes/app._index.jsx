@@ -18,7 +18,7 @@ import { Header } from "../components/header.jsx";
 
 export const loader = async ({ request }) => {
   await authenticate.admin(request);
-
+  // console.log(accessToken);
   return null;
 };
 

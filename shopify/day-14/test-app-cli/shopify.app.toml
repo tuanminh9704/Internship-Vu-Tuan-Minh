@@ -3,7 +3,7 @@
 client_id = "da9bacc9f82254c5e61c87f466a4fef7"
 name = "test-app-cli"
 handle = "test-app-cli-18"
-application_url = "https://necklace-gif-threatening-varieties.trycloudflare.com"
+application_url = "https://showers-queen-pictures-pcs.trycloudflare.com"
 embedded = true
 
 [build]
@@ -27,9 +27,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://necklace-gif-threatening-varieties.trycloudflare.com/auth/callback",
-  "https://necklace-gif-threatening-varieties.trycloudflare.com/auth/shopify/callback",
-  "https://necklace-gif-threatening-varieties.trycloudflare.com/api/auth/callback"
+  "https://showers-queen-pictures-pcs.trycloudflare.com/auth/callback",
+  "https://showers-queen-pictures-pcs.trycloudflare.com/auth/shopify/callback",
+  "https://showers-queen-pictures-pcs.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
