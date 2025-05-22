@@ -1,9 +1,9 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "da9bacc9f82254c5e61c87f466a4fef7"
-name = "test-app-cli"
-handle = "test-app-cli-18"
-application_url = "https://cherry-stopping-virtual-unauthorized.trycloudflare.com"
+client_id = "629eddbed66b0504438e4d4787044cc0"
+name = "test-webhook"
+handle = "test-webhook-34"
+application_url = "https://knew-slightly-differences-computed.trycloudflare.com"
 embedded = true
 
 [build]
@@ -27,9 +27,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://cherry-stopping-virtual-unauthorized.trycloudflare.com/auth/callback",
-  "https://cherry-stopping-virtual-unauthorized.trycloudflare.com/auth/shopify/callback",
-  "https://cherry-stopping-virtual-unauthorized.trycloudflare.com/api/auth/callback"
+  "https://knew-slightly-differences-computed.trycloudflare.com/auth/callback",
+  "https://knew-slightly-differences-computed.trycloudflare.com/auth/shopify/callback",
+  "https://knew-slightly-differences-computed.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

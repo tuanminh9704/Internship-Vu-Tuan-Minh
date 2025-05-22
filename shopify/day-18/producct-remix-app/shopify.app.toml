@@ -1,9 +1,9 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "da9bacc9f82254c5e61c87f466a4fef7"
-name = "test-app-cli"
-handle = "test-app-cli-18"
-application_url = "https://cherry-stopping-virtual-unauthorized.trycloudflare.com"
+client_id = "f38e1d228e0e8878651b6f15a8c70bca"
+name = "producct-remix-app"
+handle = "producct-remix-app"
+application_url = "https://enclosed-flame-queue-yemen.trycloudflare.com"
 embedded = true
 
 [build]
@@ -27,9 +27,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://cherry-stopping-virtual-unauthorized.trycloudflare.com/auth/callback",
-  "https://cherry-stopping-virtual-unauthorized.trycloudflare.com/auth/shopify/callback",
-  "https://cherry-stopping-virtual-unauthorized.trycloudflare.com/api/auth/callback"
+  "https://enclosed-flame-queue-yemen.trycloudflare.com/auth/callback",
+  "https://enclosed-flame-queue-yemen.trycloudflare.com/auth/shopify/callback",
+  "https://enclosed-flame-queue-yemen.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
