@@ -1,0 +1,71 @@
+{% assign product = block.settings.product %}
+{% assign avg_rating = product.metafields.demo.avg_rating.value | round %}
+{% assign inventory_quantity = product.variants.first.inventory_quantity %}
+{% assign price = product.price | money %}
+{% assign compare_at_price = product.compare_at_price | money %}
+
+<div class="custom-app-block" style="color:{{ block.settings.colour }}">
+  <!-- Đánh giá sao -->
+  {% render 'stars', rating: avg_rating %}
+
+  {% if avg_rating >= 4 %}
+    <br>
+    <img src="{{ "thumbs-up.png" | asset_img_url: '15x' }}" height="15" width="15" loading="lazy">
+    {{ 'ratings.home.recommendationText' | t }}
+  {% endif %}
+
+  <!-- Giá sản phẩm -->
+  <p><strong>Giá khuyến mãi:</strong> {{ price }}</p>
+  {% if product.compare_at_price > product.price %}
+    <p><s>Giá gốc: {{ compare_at_price }}</s></p>
+  {% endif %}
+
+  <!-- Tồn kho -->
+  <p style="margin-top:8px; color:darkgreen">Còn {{ inventory_quantity }} sản phẩm trong kho</p>
+
+  <!-- Call API riêng -->
+  <button
+    onclick="fetchAppData()"
+    style="margin-top:10px; background:#222; color:#fff; padding:6px 12px; border:none; border-radius:4px;"
+  >
+    Lấy thông tin thêm từ app
+  </button>
+
+  <div id="app-data-response" style="margin-top:10px; font-size:14px;"></div>
+</div>
+
+<script>
+  function fetchAppData() {
+    const productId = {{ product.id }};
+    fetch(`https://yourappdomain.com/api/product-info?id=${productId}`)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("app-data-response").innerText = data.message || 'Đã nhận dữ liệu.';
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById("app-data-response").innerText = "Không thể lấy dữ liệu từ app.";
+      });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Product Info Block",
+  "target": "section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product",
+      "autofill": true
+    },
+    {
+      "type": "color",
+      "id": "colour",
+      "label": "Star Colour",
+      "default": "#ffcc00"
+    }
+  ]
+}
+{% endschema %}

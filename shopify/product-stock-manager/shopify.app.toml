@@ -1,0 +1,36 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "2411cbd0b592f536abb69b90959d0036"
+name = "product-stock-manager"
+handle = "product-stock-manager-1"
+application_url = "https://segment-isbn-reuters-asbestos.trycloudflare.com"
+embedded = true
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-04"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products,read_inventory,write_inventory,read_locations,read_markets_home"
+
+[auth]
+redirect_urls = [
+  "https://segment-isbn-reuters-asbestos.trycloudflare.com/auth/callback",
+  "https://segment-isbn-reuters-asbestos.trycloudflare.com/auth/shopify/callback",
+  "https://segment-isbn-reuters-asbestos.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
