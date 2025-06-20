@@ -32,6 +32,9 @@ export const action = async ({ request }: ActionFunctionArgs) => {
       });
 
       const pointConfig = await db.pointConfig.findFirst({
+        where: {
+          selected: true
+        },
         orderBy: {
           createdAt: "desc",
         },
@@ -43,11 +46,11 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
       if (!customerExisted) {
         const newCustomer: Customer = {
-          email: payload.customer.email || "",
-          name: payload.customer.default_address.name || "",
-          firstName: payload.customer.first_name || "",
-          lastName: payload.customer.last_name || "",
-          customerIdShopify: payload.customer.id.toString(),
+          email: payload.customer?.email || "",
+          name: payload.customer?.default_address?.name ?? "",
+          firstName: payload.customer?.first_name || "",
+          lastName: payload.customer?.last_name || "",
+          customerIdShopify: payload?.customer.id.toString(),
         };
         const purchasedProducts = payload.line_items;
         const totalPrice: number = purchasedProducts.reduce(
@@ -103,7 +106,8 @@ export const action = async ({ request }: ActionFunctionArgs) => {
           data: {
             customerId: customerExisted.id,
             change: totalPoints,
-            reason: 'Ordered'
+            reason: 'Ordered',
+            type: 'earn'
           }
         })
       }

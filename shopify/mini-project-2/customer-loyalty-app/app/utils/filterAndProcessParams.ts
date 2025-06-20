@@ -13,7 +13,7 @@ export const filterAndProcessParams = (rawParams: any, BUSINESS_FIELDS: any) => 
   }
 
   if (!filteredParams.limit) {
-    filteredParams.limit = 4;
+    filteredParams.limit = 5;
   }
 
   return filteredParams;

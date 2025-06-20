@@ -43,15 +43,24 @@ export const GetProductDetail = ({
   const fomatOptionsSelected = fomatSelectedOption(optionsSelected);
   const [optionSelected, setOptionSelected] = useState(fomatOptionsSelected);
 
+  // console.log('baseProduct=====', baseProduct);
+  // console.log('variants====', variants);
+  // console.log('variantSelected=====', variantSelected);
+  // console.log('optionValuesMapObjRecordKeys====', optionValuesMapObjRecordKeys);
+  // console.log('fomatOptionsSelected====', fomatOptionsSelected);
+
   const [openModal, setOpenModal] = useState(false);
   const handleOpenModal = useCallback(
     () => setOpenModal(!openModal),
     [openModal],
   );
   const [price, setPrice] = useState(variantSelectedState.price);
-  // const [variantId, setVariantId] = useState(
-  //   variantSelectedState.inventoryItem.id,
-  // );
+  const [quantityWithLocation, setQuantityWithLocation] = useState(0);
+  const [compareQuantity, setCompareQuantity] = useState(0);
+  const [locationId, setLocationId] = useState("");
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+  const [toastError, setToastError] = useState(false);
 
   // Location
   const optionsLocation = baseProduct.allLocation.map((location: string) => ({
@@ -66,10 +75,7 @@ export const GetProductDetail = ({
     [],
   );
 
-  const [quantityWithLocation, setQuantityWithLocation] = useState(0);
-  const [compareQuantity, setCompareQuantity] = useState(0);
-  const [locationId, setLocationId] = useState("");
-  // set su thay doi quantity khi thay doi location
+  // Update quantity based on location
   useEffect(() => {
     const variantSelectedWithLocation =
       variantSelectedState.inventoryItem.inventoryLevels.edges.find(
@@ -86,10 +92,9 @@ export const GetProductDetail = ({
 
   useEffect(() => {
     setPrice(variantSelectedState.price);
-    // setVariantId(variantSelectedState.inventoryItem.id);
   }, [variantSelectedState]);
 
-  // Cập nhật variant khi đổi options
+  // Update variant when options change
   useEffect(() => {
     const newVariantSelected = variants.find((variant: any) =>
       Object.entries(optionSelected).every(
@@ -102,26 +107,36 @@ export const GetProductDetail = ({
       const url = new URL(window.location.href);
       url.searchParams.set("variantId", newVariantSelected.id);
       window.history.replaceState(null, "", url.toString());
-    }
-    else {
-      alert('Không tồn tại sản phẩm!');
+    } else {
+      setToastMessage("Không tồn tại sản phẩm!");
+      setToastError(true);
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000);
     }
   }, [optionSelected, variants]);
 
   const submit = useSubmit();
-  const actionData : any = useActionData();
-  const [showToast, setShowToast] = useState(false);  
-  const [toastMessage, setToastMessage] = useState("");
-  const [toastError, setToastError] = useState(true);
-    useEffect(() => {
+  const actionData: any = useActionData();
+
+  // Toast for success
+  useEffect(() => {
     if (actionData?.success) {
-      setToastMessage('Updated succesfully!')
+      setToastMessage("Updated successfully!");
+      setToastError(false);
       setShowToast(true);
       setTimeout(() => setShowToast(false), 2000);
-      setToastError(false)
     }
   }, [actionData]);
+
+  // Handle form submission with validation
   const handleSubmit = () => {
+    if (price < 0 || quantityWithLocation < 0) {
+      setToastMessage("Price and quantity cannot be negative!");
+      setToastError(true);
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000);
+      return;
+    }
 
     submit(
       {
@@ -144,8 +159,12 @@ export const GetProductDetail = ({
   return (
     <Frame>
       {showToast && (
-        <Toast content={toastMessage} error={toastError} onDismiss={() => setShowToast(false)} />
-      )}{" "}
+        <Toast
+          content={toastMessage}
+          error={toastError}
+          onDismiss={() => setShowToast(false)}
+        />
+      )}
       <Page
         title={baseProduct.title}
         primaryAction={{
@@ -155,7 +174,7 @@ export const GetProductDetail = ({
           },
         }}
       >
-        <Form method="POST" onSubmit={handleSubmit}>
+        <Form method="POST" onSubmit={(e) => e.preventDefault()}>
           <Modal
             open={openModal}
             onClose={handleOpenModal}

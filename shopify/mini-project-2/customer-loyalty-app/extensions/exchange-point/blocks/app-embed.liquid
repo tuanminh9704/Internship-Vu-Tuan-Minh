@@ -1,0 +1,91 @@
+<div class="loyalty-widget">
+  <button class="button-exchange-point">Đổi điểm 🎁</button>
+
+  <div class="loyalty-modal hidden">
+    <div class="loyalty-content">
+      <button class="close-modal" aria-label="Close">✖</button>
+
+      {% if customer %}
+        <div id="customer-id" data-id="{{ customer.id }}"></div>
+        <div id="shop-info" data-shop="{{ shop.permanent_domain }}"></div>
+
+        <h2>🎁 Chương trình tích điểm</h2>
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="redeem">Đổi điểm</button>
+          <button class="tab-button" data-tab="history">Lịch sử</button>
+        </div>
+
+        <div class="redeem-section">
+          <ul class="redeem-rules">
+            <li>Mỗi 100 điểm tương ứng với 10.000đ giảm giá.</li>
+            <li>Điểm chỉ có thể đổi khi đạt tối thiểu 100 điểm.</li>
+            <li>Mã giảm giá có hiệu lực trong 30 ngày kể từ khi đổi.</li>
+            <li>Mỗi khách hàng chỉ được đổi tối đa 500 điểm mỗi tháng.</li>
+          </ul>
+          <p>
+            Xin chào <strong>{{ customer.first_name }}</strong>, bạn đang có:
+          </p>
+          <p class="loyalty-points"><strong>...</strong> điểm</p>
+
+          <form method="POST" action="/apps/app/redeemPointProxy" class="redeem-form">
+            <input type="hidden" name="customerShopifyId" value="{{ customer.id }}">
+            <input type="hidden" id="shop-input" name="shop" value="{{ shop.permanent_domain }}">
+            <label for="redeem-amount">Chọn số điểm để đổi:</label>
+            <select name="redeem-amount" id="redeem-amount" required>
+              <option value="100">100 điểm → 10.000đ</option>
+              <option value="200">200 điểm → 20.000đ</option>
+              <option value="500">500 điểm → 50.000đ</option>
+            </select>
+            <button type="submit" class="btn-redeem">
+              Đổi điểm lấy mã
+              <span class="spinner" style="display: none;"></span>
+            </button>
+          </form>
+
+          <div class="redeem-success hidden">
+            <p>🎉 Các mã giảm giá của bạn:</p>
+            <div class="discount-codes" id="discount-codes"></div>
+            <p class="redeem-note">Hãy dùng mã này khi thanh toán!</p>
+          </div>
+        </div>
+
+        <div class="redeem-history hidden">
+          <h3>Lịch sử đổi điểm</h3>
+          <div class="history-container">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th>Ngày hết hạn</th>
+                  <th>Điểm đổi</th>
+                  <th>Mã coupon</th>
+                  <th>Số tiền giảm giá</th>
+                  <th>Trạng thái</th>
+                </tr>
+              </thead>
+              <tbody id="history-list">
+                <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
+              </tbody>
+            </table>
+          </div>
+          <p id="no-history" class="hidden">Chưa có giao dịch đổi điểm nào.</p>
+        </div>
+      {% else %}
+        <p>🔐 Vui lòng <a href="/account/login">đăng nhập</a> để xem và đổi điểm.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- Tải thư viện Toastify-js -->
+<script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.css">
+
+{% schema %}
+{
+  "name": "Exchange Point",
+  "target": "body",
+  "stylesheet": "exchange-point.css",
+  "javascript": "pointInfo.js",
+  "settings": []
+}
+{% endschema %}

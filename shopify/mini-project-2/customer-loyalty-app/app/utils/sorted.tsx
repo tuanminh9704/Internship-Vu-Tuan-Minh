@@ -1,24 +1,22 @@
-export const sorted = (customers: any, sortBy: any, order: any) => {
-  if (!customers || customers.length === 0) {
-    return customers;
-  }
+export const sorted = (allData: any[], sortBy: string, order: 'asc' | 'desc'): any[] => {
+  if (!allData || allData.length === 0) return allData;
 
-  customers.sort((a: any, b: any) => {
+  return [...allData].sort((a, b) => {
     const valueA = a[sortBy];
     const valueB = b[sortBy];
+
     if (typeof valueA === "string" && typeof valueB === "string") {
-      if (order === "asc") {
-        return valueA > valueB ? 1 : -1; // Tang dan a > b => a dung sau
-      } else {
-        return valueA < valueB ? 1 : -1; // Giam dan: a < b => a dung sau
-      }
-    } else {
-      if (order === "asc") {
-        return valueA - valueB; // Tăng dần: số nhỏ đứng trước
-      } else {
-        return valueB - valueA; // Giảm dần: số lớn đứng trước
-      }
+      return order === "asc"
+        ? valueA.localeCompare(valueB)
+        : valueB.localeCompare(valueA);
     }
+
+    if (valueA instanceof Date && valueB instanceof Date) {
+      return order === "asc"
+        ? valueA.getTime() - valueB.getTime()
+        : valueB.getTime() - valueA.getTime();
+    }
+
+    return order === "asc" ? valueA - valueB : valueB - valueA;
   });
-  return customers;
 };

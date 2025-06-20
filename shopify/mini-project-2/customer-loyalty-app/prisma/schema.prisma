@@ -41,6 +41,7 @@ model Customer {
   points         Point?
   pointLogs      PointLog[]
   redeemCodes    RedeemCode[]
+  reviews        Reviews[]
 }
 
 model Point {
@@ -55,6 +56,7 @@ model PointLog {
   id          Int       @id @default(autoincrement())
   customerId  Int
   change      Int       // +earn hoặc -spend
+  type        String?
   reason      String?
   createdAt   DateTime  @default(now())
 
@@ -67,6 +69,8 @@ model RedeemCode {
   amount      Int       // Giá trị giảm giá (VNĐ)
   customerId  Int
   pointUsed   Int
+  isUsed      Boolean   @default(false) 
+  expiresAt   DateTime?                  
   createdAt   DateTime  @default(now())
 
   customer    Customer  @relation(fields: [customerId], references: [id])
@@ -78,7 +82,30 @@ model PointConfig {
   earnRate           Int    
   redeemRatePoint    Int  
   redeemRateAmount   Int   
+  selected           Boolean  @default(false)
   updatedAt          DateTime @updatedAt
   createdAt          DateTime @default(now())
 }
+
+model Reviews {
+  id          Int       @id @default(autoincrement())
+  productId   String
+  customerId  Int
+  email       String
+  rate        Int
+  content     String
+  isApproved  Boolean
+  createdAt   DateTime @default(now())
+  customer    Customer  @relation(fields: [customerId], references: [id])
+  thumbnails  ReviewThumbnail[]
+}
+
+model ReviewThumbnail {
+  id        Int     @id @default(autoincrement())
+  reviewId  Int
+  url       String
+
+  review    Reviews @relation(fields: [reviewId], references: [id])
+}
+
 

@@ -25,6 +25,10 @@ export default function App() {
           Home
         </Link>
         <Link to="/app/additional">Additional page</Link>
+        <Link to="/app/customers">Customers</Link>
+        <Link to="/app/redeemCodes">Redeem Code</Link>
+        <Link to="/app/pointConfig">Point Config</Link>
+        <Link to="/app/reviews">Reviews management</Link>
       </NavMenu>
       <Outlet />
     </AppProvider>

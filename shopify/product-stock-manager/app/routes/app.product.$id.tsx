@@ -49,7 +49,7 @@ export const loader = async ({ request, params }: LoaderFunctionArgs) => {
     if (!variantSelected) {
       variantSelected = variants[0];
     }
-
+    // xu ly option selected dang {key: [value]}
     const optionValuesVariant = getOptionValuesVariant(variantSelected);
     variantSelected.optionValuesVariant = optionValuesVariant;
 

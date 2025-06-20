@@ -3,7 +3,7 @@
 client_id = "1f7d703e7cc37dcbb693ba2070442603"
 name = "customer-loyalty-app"
 handle = "customer-loyalty-app-2"
-application_url = "https://suggests-checkout-announced-samba.trycloudflare.com"
+application_url = "https://rings-brazilian-arnold-proud.trycloudflare.com"
 embedded = true
 
 [build]
@@ -23,13 +23,13 @@ api_version = "2025-04"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "read_customers,write_customers,read_orders,write_orders,write_products,write_fulfillments"
+scopes = "read_customers,write_customers,read_orders,write_orders,write_products,write_fulfillments,write_discounts"
 
 [auth]
 redirect_urls = [
-  "https://suggests-checkout-announced-samba.trycloudflare.com/auth/callback",
-  "https://suggests-checkout-announced-samba.trycloudflare.com/auth/shopify/callback",
-  "https://suggests-checkout-announced-samba.trycloudflare.com/api/auth/callback"
+  "https://rings-brazilian-arnold-proud.trycloudflare.com/auth/callback",
+  "https://rings-brazilian-arnold-proud.trycloudflare.com/auth/shopify/callback",
+  "https://rings-brazilian-arnold-proud.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

@@ -3,7 +3,7 @@
 client_id = "2411cbd0b592f536abb69b90959d0036"
 name = "product-stock-manager"
 handle = "product-stock-manager-1"
-application_url = "https://segment-isbn-reuters-asbestos.trycloudflare.com"
+application_url = "https://desired-opening-joseph-seek.trycloudflare.com"
 embedded = true
 
 [build]
@@ -27,9 +27,9 @@ scopes = "write_products,read_inventory,write_inventory,read_locations,read_mark
 
 [auth]
 redirect_urls = [
-  "https://segment-isbn-reuters-asbestos.trycloudflare.com/auth/callback",
-  "https://segment-isbn-reuters-asbestos.trycloudflare.com/auth/shopify/callback",
-  "https://segment-isbn-reuters-asbestos.trycloudflare.com/api/auth/callback"
+  "https://desired-opening-joseph-seek.trycloudflare.com/auth/callback",
+  "https://desired-opening-joseph-seek.trycloudflare.com/auth/shopify/callback",
+  "https://desired-opening-joseph-seek.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

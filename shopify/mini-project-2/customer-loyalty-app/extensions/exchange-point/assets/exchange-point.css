@@ -1,0 +1,369 @@
+.button-exchange-point {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: linear-gradient(90deg, #008060, #00a87e);
+  color: #ffffff;
+  padding: 18px 32px; /* Tăng từ 14px 24px */
+  border-radius: 50px;
+  border: none;
+  font-size: 20px; /* Tăng từ 18px */
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Tăng shadow */
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-exchange-point:hover {
+  background: linear-gradient(90deg, #00684a, #008060);
+  transform: translateY(-3px); /* Tăng hiệu ứng hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.button-exchange-point:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.loyalty-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.loyalty-content {
+  background: #ffffff;
+  padding: 32px; /* Tăng từ 24px */
+  border-radius: 16px; /* Tăng từ 12px */
+  width: 100%;
+  max-width: 580px; /* Tăng từ 500px */
+  max-height: 85vh; /* Tăng từ 80vh */
+  overflow-y: auto;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); /* Tăng shadow */
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-modal {
+  position: absolute;
+  top: 18px; /* Tăng từ 14px */
+  right: 18px; /* Tăng từ 14px */
+  background: transparent;
+  border: none;
+  font-size: 26px; /* Tăng từ 22px */
+  cursor: pointer;
+  color: #6b7280;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.close-modal:hover {
+  color: #111827;
+  transform: scale(1.3); /* Tăng từ 1.2 */
+}
+
+.loyalty-content h2 {
+  font-size: 26px; /* Tăng từ 22px */
+  font-weight: 700;
+  margin-bottom: 20px; /* Tăng từ 16px */
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Tăng từ 6px */
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 8px; /* Tăng từ 6px */
+  margin-bottom: 20px; /* Tăng từ 16px */
+}
+
+.tab-button {
+  flex: 1;
+  padding: 12px 16px; /* Tăng từ 8px */
+  border: none;
+  border-radius: 8px; /* Tăng từ 6px */
+  font-size: 16px; /* Tăng từ 14px */
+  font-weight: 500;
+  background: #f3f4f6;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.tab-button.active {
+  background: #008060;
+  color: #ffffff;
+}
+
+.tab-button:hover:not(.active) {
+  background: #e5e7eb;
+}
+
+.redeem-rules {
+  margin-bottom: 20px; /* Tăng từ 16px */
+  padding-left: 24px; /* Tăng từ 20px */
+  list-style-type: disc;
+  color: #4b5563;
+  font-size: 16px; /* Tăng từ 14px */
+  line-height: 1.6; /* Tăng từ 1.5 */
+}
+
+.redeem-rules li {
+  margin-bottom: 8px; /* Tăng từ 6px */
+}
+
+.loyalty-content p {
+  font-size: 16px; /* Tăng từ 14px */
+  color: #374151;
+  margin-bottom: 12px; /* Tăng từ 10px */
+  line-height: 1.5;
+}
+
+.loyalty-points {
+  font-size: 28px; /* Tăng từ 22px */
+  font-weight: 700;
+  color: #4f46e5;
+  margin: 12px 0 24px; /* Tăng từ 10px 0 20px */
+}
+
+.redeem-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* Tăng từ 14px */
+  margin-top: 12px; /* Tăng từ 8px */
+}
+
+.redeem-form label {
+  font-size: 16px; /* Tăng từ 14px */
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 6px; /* Tăng từ 4px */
+}
+
+.redeem-form select {
+  padding: 14px; /* Tăng từ 10px */
+  border-radius: 8px; /* Tăng từ 6px */
+  border: 1px solid #d1d5db;
+  font-size: 16px; /* Tăng từ 14px */
+  background-color: #f9fafb;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.redeem-form select:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1); /* Tăng từ 3px */
+}
+
+.btn-redeem {
+  background: linear-gradient(90deg, #10b981, #34d399);
+  color: #ffffff;
+  padding: 14px 24px; /* Tăng từ 10px 20px */
+  border: none;
+  border-radius: 8px; /* Tăng từ 6px */
+  font-size: 17px; /* Tăng từ 15px */
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px; /* Tăng từ 40px */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-redeem:hover:not(:disabled) {
+  background: linear-gradient(90deg, #059669, #10b981);
+  transform: translateY(-2px); /* Tăng từ -1px */
+}
+
+.btn-redeem:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.redeem-success {
+  margin-top: 20px; /* Tăng từ 16px */
+  padding: 14px; /* Tăng từ 10px */
+  background-color: #ecfdf5;
+  border: 1px solid #6ee7b7;
+  border-radius: 10px; /* Tăng từ 8px */
+  font-size: 15px; /* Tăng từ 13px */
+  color: #065f46;
+  line-height: 1.6; /* Tăng từ 1.5 */
+  word-break: break-word;
+}
+
+.redeem-success p {
+  margin-bottom: 8px; /* Tăng từ 6px */
+}
+
+.redeem-note {
+  margin-top: 8px; /* Tăng từ 6px */
+  font-size: 14px; /* Tăng từ 12px */
+  color: #065f46;
+}
+
+.discount-codes {
+  border: 1px solid #d1d5db;
+  border-radius: 8px; /* Tăng từ 6px */
+  padding: 10px; /* Tăng từ 6px */
+  background-color: #f9fafb;
+}
+
+.discount-code-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px; /* Tăng từ 4px 6px */
+  margin-bottom: 6px; /* Tăng từ 4px */
+  background-color: #ffffff;
+  border-radius: 7px; /* Tăng từ 5px */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tăng từ 0 1px 2px */
+}
+
+.discount-code-item:last-child {
+  margin-bottom: 0;
+}
+
+.discount-code-text {
+  font-size: 14px; /* Tăng từ 12px */
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.btn-copy {
+  padding: 8px 14px; /* Tăng từ 5px 10px */
+  background: linear-gradient(90deg, #008060, #00a87e);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px; /* Tăng từ 6px */
+  cursor: pointer;
+  font-size: 13px; /* Tăng từ 11px */
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-copy:hover {
+  background: linear-gradient(90deg, #00684a, #008060);
+  transform: translateY(-1px);
+}
+
+.redeem-history h3 {
+  font-size: 22px; /* Tăng từ 18px */
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 16px; /* Tăng từ 12px */
+}
+
+.history-container {
+  max-height: 180px; /* Tăng từ 160px */
+  overflow-y: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px; /* Tăng từ 13px */
+  color: #374151;
+}
+
+.history-table th,
+.history-table td {
+  padding: 10px 8px; /* Tăng từ 8px 6px */
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.history-table th {
+  font-weight: 600;
+  color: #1f2937;
+  background: #f9fafb;
+  font-size: 15px; /* Tăng từ 14px */
+}
+
+.history-table td {
+  color: #4b5563;
+}
+
+.history-container::-webkit-scrollbar {
+  width: 8px; /* Tăng từ 6px */
+}
+
+.history-container::-webkit-scrollbar-thumb {
+  background-color: #6ee7b7;
+  border-radius: 4px; /* Tăng từ 3px */
+}
+
+.history-container::-webkit-scrollbar-track {
+  background-color: #f3f4f6;
+}
+
+#no-history {
+  font-size: 16px; /* Tăng từ 14px */
+  color: #6b7280;
+  text-align: center;
+  margin-top: 20px; /* Tăng từ 16px */
+}
+
+.hidden {
+  display: none;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #ffffff;
+  border-radius: 50%;
+  width: 28px; /* Tăng từ 24px */
+  height: 28px; /* Tăng từ 24px */
+  animation: spin 0.7s linear infinite;
+  margin-left: 12px; /* Tăng từ 10px */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .loyalty-content {
+    margin: 10px;
+    max-width: calc(100vw - 20px);
+    padding: 24px 20px;
+  }
+  
+  .button-exchange-point {
+    bottom: 20px;
+    right: 20px;
+    padding: 14px 24px;
+    font-size: 16px;
+  }
+  
+  .loyalty-content h2 {
+    font-size: 22px;
+  }
+  
+  .loyalty-points {
+    font-size: 24px;
+  }
+}
